@@ -4,7 +4,7 @@
 #   Updates ~/.vimrc with preferred color scheme and configuration. Note this
 #   will overwrite your eisting ~/.vimrc file.
 
-install ()
+function install ()
 {
     # Make directory to store color scheme
     # -p makes sub-directories as needed and does not error if directory
@@ -27,8 +27,10 @@ if [ -f "$HOME/.vimrc" ]; then
     echo "$HOME/.vimrc will be overwritten. Do you wish to continue?"
     select yn in "Yes" "No"; do
     case $yn in
-        Yes ) echo "Yes"; break;;
+	    Yes ) install; break;;
         No ) exit;;
     esac
     done
+else
+    install
 fi
