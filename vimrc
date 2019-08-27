@@ -7,3 +7,4 @@ colorscheme solarized
 :set expandtab
 :set ruler
 :set number
+:imap fd <Esc>
